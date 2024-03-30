@@ -14,10 +14,7 @@ const store = {
     }
 };
 
-// end html header//import RSInjectConfig from '../config.json';
-//import store from '../../../store';
-//import { nextTick } from 'vue';
-
+// end html header
 declare global {
     interface Window { 
         rspkr: any; 

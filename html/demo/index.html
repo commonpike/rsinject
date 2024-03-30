@@ -7,28 +7,21 @@
         RSInject.init()
       });
     </script>
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="rsinject.css">
     <style type="text/css">
       
-      
-      .rsi-speaker:before {
-        content: "\1F508";
-      }
-      .rsi-speaker-active {
-        color:red;
+      #rsi-wrapper { 
+          display:flex; 
+          background-color:black;
+          justify-content: center;
+          align-items: center;
+          height:60px;
+          position:fixed;
+          bottom:0;
+          left:0;
+          width:100%;
       }
 
-      #rsi-wrapper { 
-        display:flex; 
-        background-color:black;
-        justify-content: center;
-        align-items: center;
-        height:60px;
-        position:fixed;
-        bottom:0;
-        left:0;
-        width:100%;
-      }
 
       #load, #enable,#disable,#play,#pause,#stop {
         display:none;
@@ -54,7 +47,7 @@
   </head>
   <body>
     <div id="rsi-wrapper">
-      <div id="rsi-player" class="rs_addtools rsbtn rs_splitbutton rs_preserve rs_skip rs_exp"></div>
+      <div id="rsi-player" class="rs_addtools rs_splitbutton rs_preserve rs_skip rs_exp"></div>
     </div>
     <div id="rsi-tools">
       <button id="load" onclick="RSInject && RSInject.load()">load readspeaker</button>
