@@ -35,7 +35,6 @@ npm run serve
 ### src/modules/rsplayer
 
 Copy the module folder to `src/modules/rsplayer`
-Copy the contents of `src/modules/rsplayer/public` to `public`
 
 #### Edit the config.json 
 It contains the `window.rsConf` that ReadSpeaker wants,
