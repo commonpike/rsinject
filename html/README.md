@@ -34,10 +34,12 @@ in your ReadSpeaker account.
 
 ## Using RSInject in your own site
 
+Generate the demo first. This will compile
+the vanilla javascript in the `demo/js` folder.
+
 ### demo/js/RSInject.js
 
-Copy the script somewhere in you site.
-
+Copy the script somewhere in your site.
 
 ### HTML
 
@@ -60,7 +62,7 @@ Add this to your HTML
 
 #### demo/config.js
 
-Copy the config file somewhere in you site and edit it.
+Copy `demo/config.js` somewhere in your site and edit it.
 RSInject requires it; make sure the path is set correctly.
 
 It contains the `window.rsConf` that ReadSpeaker wants,
@@ -79,5 +81,5 @@ Zones are areas to read within your app. For each zone you can configure
 
 #### Finetune css
 
-Look in demo/rsinject.css for options on finetuning css.
+Look in src/rsinject.css for options on finetuning css.
 

@@ -1,4 +1,4 @@
-# ReadSpeakerPlayer for Vue
+# ReadSpeakerInject for Vue
 
 This Vue module allows you to add ReadSpeaker (readspeaker.com)
 to your Vue app without modifying your Vue templates or much
@@ -7,7 +7,7 @@ of the app.
 This is not a NPM module. You need to manually 
 copy the module code to your app.
 
-RSPlayer needs to be `init`ed, `load`ed and 
+RSInject needs to be `init`ed, `load`ed and 
 `enable`d before it does anything. The include .vue component
 will do these things for you; read more below.
 
@@ -18,7 +18,7 @@ to read from and one (css) queryselector to insert a speaker
 link in.
 
 If all that is done, on every DOM change, the DOM will be 
-reinspected and if RSPlayer finds new zones, the zone will be 
+reinspected and if RSInject finds new zones, the zone will be 
 prepared and speaker buttons inserted according 
 to your config.
 
@@ -38,13 +38,13 @@ in your ReadSpeaker account.
 
 ## Using RSInject in your own project
 
-### src/modules/rsplayer
+### src/modules/rsinject
 
-Copy the module folder to `src/modules/rsplayer`
+Copy the module folder to `src/modules/rsinject`
 
 #### Edit the config.json 
 It contains the `window.rsConf` that ReadSpeaker wants,
-plus extra settings for RSPlayer, including the `zones`.
+plus extra settings for RSInject, including the `zones`.
 
 Zones are areas to read within your app. Within each zone,
  - `zone_selector` defines the container for a zone
@@ -52,10 +52,10 @@ Zones are areas to read within your app. Within each zone,
  - `speaker_selector` defines where to place the speaker button inside the zone
  - `skip_selectors` defines what elements to `rs_skip` inside the zone
  - `noaria_selectors` define where to remove aria-label inside the zone
- - `greedy` optional, false by default. When rsplayer has initialized a zone, it will not re-evaluate that zone even if there are changes on the page, to save CPU. Set to true to always evaluate the contents of a zone, even if it has been evaluated before. 
+ - `greedy` optional, false by default. When rsinject has initialized a zone, it will not re-evaluate that zone even if there are changes on the page, to save CPU. Set to true to always evaluate the contents of a zone, even if it has been evaluated before. 
 
 
-#### Finetune RSPlayer.vue  
+#### Finetune RSInject.vue  
 
 It contains the (split) player and a help page.
 It also loads the global css for styling, oa,
@@ -64,7 +64,7 @@ the speaker links throughout the app. Edit to your likings.
 
 #### Finetune css
 
-Edit settings for your site in rsplayer.less.
+Edit settings for your site in rsinject.less.
 It also contains a custom skin in skin.less. 
 
 ### main.js
@@ -87,7 +87,7 @@ in `tsconfig.json`, add
 }
 ```
 
-### Include RSPlayer.vue somewhere
+### Include RSInject.vue somewhere
 
 include the player components and help page, and some links to handle it
 ```
