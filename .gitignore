@@ -1,7 +1,10 @@
 .DS_Store
 node_modules
 /dist
-
+html/demo
+html/src/js/config.js
+vue/demo
+vue/src/modules/rsinject/config.json
 
 # local env files
 .env.local

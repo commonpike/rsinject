@@ -24,7 +24,7 @@ To run this particular demo, run
 ```
 npm install
 # edit config file, insert your customer id
-cp src/config.js-dist src/config.js
+cp src/js/config.js-dist src/js/config.js
 nano src/config.js
 npm run demo
 ```

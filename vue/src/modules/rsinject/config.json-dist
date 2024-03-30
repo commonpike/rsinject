@@ -22,6 +22,7 @@
             }
         }
     },
+    "debug": false,
     "script_url": "//cdn-eu.readspeaker.com/script/{{customer_id}}/webReader/webReader.js?pids=wr",
     "read_url": "https://app-eu.readspeaker.com/cgi-bin/rsent",
     "lang": "nl_nl",

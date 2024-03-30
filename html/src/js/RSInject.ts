@@ -1,6 +1,8 @@
+// THIS FILE WAS GENERATED DURING BUILD
+
 // start html header
 
-import RSInjectConfig from '../config.js';
+import RSInjectConfig from './config.js';
 
 const nextTick = (f: Function) => {
     setTimeout(f,500);
@@ -14,9 +16,9 @@ const store = {
     }
 };
 
-const process = undefined;
-
 // end html header
+
+
 declare global {
     interface Window { 
         rspkr: any; 
@@ -61,7 +63,6 @@ export default class RSInject {
     static currentSpeaker?: Element;
     static error = "";
     private static config = RSInjectConfig;
-    private static debugging = true;
     private static throttle: number;
     private static throttleTimeout = 500;
     private static observer: MutationObserver;
@@ -85,7 +86,7 @@ export default class RSInject {
                 ended: RSInject.onStop
             }
         }
-        this.config.script_url.replace(
+        this.config.script_url = this.config.script_url.replace(
             '{{customer_id}}',
             this.config.customer_id
         );
@@ -127,9 +128,9 @@ export default class RSInject {
     public static disable() {
         this.debug('disable '+this.enabled);
         if (this.enabled) {
+            this.unwatch();
             this.disableAllZoneElements();
             this.zoneCounter=0;
-            this.unwatch();
             this.enabled = false;
             document.body.classList.remove('rsi-enabled','rsi-hidden');
             // if you came from the rsConf.callback.ui close event, and thus went
@@ -462,13 +463,17 @@ export default class RSInject {
     }
 
     private static unwatch() {
+        this.debug('unwatch');
         if (this.observer) {
+            clearTimeout(this.throttle);
             this.observer.disconnect();
+        } else {
+            console.error('unwatch: no observer to disconnect');
         }
     }
 
     private static debug(...contents: any[]) {
-        if (this.debugging) {
+        if (this.config.debug) {
             contents.unshift('RSInject');
             console.log(...contents);
         }
