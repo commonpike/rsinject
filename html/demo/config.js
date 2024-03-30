@@ -39,6 +39,7 @@ export default {
         "error_text": "An error occurred while loading the ReadSpeaker. Check your setup and try again.",
         "error_close": "Close"
     },
+    "root_selector": "body",
     "zones": {
         "help": {
             "zone_selector": "#rsp-help",
@@ -62,6 +63,15 @@ export default {
             "skip_selectors": [],
             "noaria_selectors": [],
             "speaker_selector": "i",
+            "speaker_position": "after",
+            "speaker_class": "very-special-speaker"
+        },
+        "demo3": {
+            "zone_selector": "#demo3",
+            "read_selectors": [".demo3-content"],
+            "skip_selectors": [],
+            "noaria_selectors": ["p"],
+            "speaker_selector": "b",
             "speaker_position": "after"
         }
     } 

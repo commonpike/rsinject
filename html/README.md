@@ -23,8 +23,14 @@ to your config.
 To run this particular demo, run 
 ```
 npm install
+# edit config file, insert your customer id
+cp src/config.js-dist src/config.js
+nano src/config.js
 npm run demo
 ```
+
+Ofcourse, the domain you run this on should be enabled 
+in your ReadSpeaker account.
 
 ## Using RSInject in your own site
 

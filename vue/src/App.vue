@@ -1,12 +1,13 @@
 <template>
   <p>
-    <RSInject />
     <span v-if="!loaded">
-      &lt;-- load and enable your readspeaker here 
+      load and enable your readspeaker here --&gt;
     </span>
     <span v-else-if="!enabled">
-      &lt;-- enable your readspeaker here 
+      enable your readspeaker here --&gt;
     </span>
+    <RSInject />
+    
     <!-- optional goodies 
       <hr />
       <button id="load" @click="store.dispatch('rsinject/load')">Load the player</button>

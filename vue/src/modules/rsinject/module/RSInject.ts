@@ -3,9 +3,6 @@ import RSInjectConfig from '../config.json';
 import store from '../../../store';
 import { nextTick } from 'vue';
 // end vue header
-//import RSInjectConfig from '../config.json';
-//import store from '../../../store';
-//import { nextTick } from 'vue';
 
 declare global {
     interface Window { 
@@ -75,6 +72,12 @@ export default class RSInject {
                 ended: RSInject.onStop
             }
         }
+        console.log(this.config.script_url);
+        this.config.script_url = this.config.script_url.replace(
+            '{{customer_id}}',
+            this.config.customer_id
+        );
+        console.log(this.config.script_url);
     }
 
     public static async load() {
@@ -127,6 +130,11 @@ export default class RSInject {
 
     public static update() {
         this.debug('update');
+        if (this.currentSpeaker && this.playing) {
+            if (!document.body.contains(this.currentSpeaker)) {
+                this.stop();
+            }
+        }
         for (const zonekey in this.config.zones) {
             const zone = (this.config.zones as { [key: string]: Zone })[zonekey] ;
             this.getZoneElements(zone).forEach(elem=> {
@@ -421,7 +429,7 @@ export default class RSInject {
             this.unwatch();
         }
 
-        const targetNode = document.getElementById("app");
+        const targetNode = document.querySelector(this.config.root_selector);
         if (targetNode) {
             if (!this.observer) {
                 const callback = (mutationList: MutationRecord[]) => {
@@ -436,12 +444,16 @@ export default class RSInject {
             }
             const config = { childList: true, subtree: true };
             this.observer.observe(targetNode, config);
+        } else {
+            console.error(this.config.root_selector+' not found; check you config');
         }
 
     }
 
     private static unwatch() {
-        this.observer.disconnect();
+        if (this.observer) {
+            this.observer.disconnect();
+        }
     }
 
     private static debug(...contents: any[]) {

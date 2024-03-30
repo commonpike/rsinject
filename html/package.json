@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "demo": "npm run build && cd demo && python3 -m http.server",
-    "build": "rm -r demo/* && npm run copy && tsc ",
-    "copy": "rm src/js/RSInject.ts && cp -a ./src/* ./demo/ && cat ../common/src/RSInject.header-html.inc ../common/src/RSInject.ts  > src/js/RSInject.ts"
+    "build": "rm -rf demo/* && npm run update && npm run copy && tsc",
+    "update": "cat ../common/src/RSInject.header-html.inc ../common/src/RSInject.ts  > src/js/RSInject.ts",
+    "copy": "cp -va ./src/* ./demo/"
   },
   "keywords": [],
   "author": "",

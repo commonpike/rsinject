@@ -1,4 +1,5 @@
 {
+    "customer_id": "xxxxxx",
     "rsConf" : { 
         "general": { 
             "usePost": true,
@@ -21,8 +22,7 @@
             }
         }
     },
-    "customer_id": 11564,
-    "script_url": "//cdn-eu.readspeaker.com/script/11564/webReader/webReader.js?pids=wr",
+    "script_url": "//cdn-eu.readspeaker.com/script/{{customer_id}}/webReader/webReader.js?pids=wr",
     "read_url": "https://app-eu.readspeaker.com/cgi-bin/rsent",
     "lang": "nl_nl",
     "player_id": "rsi-player",
@@ -39,6 +39,7 @@
         "error_text": "An error occurred while loading the ReadSpeaker. Check your setup and try again.",
         "error_close": "Close"
     },
+    "root_selector": "#app",
     "zones": {
         "hello": {
             "zone_selector": ".home .hello",

@@ -19,6 +19,7 @@ const store = {
         }
     }
 };
+const process = undefined;
 class RSInject {
     static init() {
         this.debug('init');
@@ -38,6 +39,7 @@ class RSInject {
                 ended: RSInject.onStop
             }
         };
+        this.config.script_url.replace('{{customer_id}}', this.config.customer_id);
     }
     static load() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -87,6 +89,11 @@ class RSInject {
     }
     static update() {
         this.debug('update');
+        if (this.currentSpeaker && this.playing) {
+            if (!document.body.contains(this.currentSpeaker)) {
+                this.stop();
+            }
+        }
         for (const zonekey in this.config.zones) {
             const zone = this.config.zones[zonekey];
             this.getZoneElements(zone).forEach(elem => {
@@ -359,7 +366,7 @@ class RSInject {
             if (this.observer) {
                 this.unwatch();
             }
-            const targetNode = document.getElementById("app");
+            const targetNode = document.querySelector(this.config.root_selector);
             if (targetNode) {
                 if (!this.observer) {
                     const callback = (mutationList) => {
@@ -375,10 +382,15 @@ class RSInject {
                 const config = { childList: true, subtree: true };
                 this.observer.observe(targetNode, config);
             }
+            else {
+                console.error(this.config.root_selector + ' not found; check you config');
+            }
         });
     }
     static unwatch() {
-        this.observer.disconnect();
+        if (this.observer) {
+            this.observer.disconnect();
+        }
     }
     static debug(...contents) {
         if (this.debugging) {
