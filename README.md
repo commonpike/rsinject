@@ -19,61 +19,9 @@ Once loaded and enabled, RSInject *injects* ReadSpeaker player links into the pa
 In effect, you only have to insert the ReadSpeaker player in your design, and configure which zones should be readable. Optionally, you can add buttons in your design to load and enable ReadSpeaker; disabling ReadSpeaker is already handled by the close button on the player.
 
 There are 2 versions: a 'plain' typescript version and a Vue version.
-
-
-
-
-
-
-
-
-
-
-## RSInject for Typescript
-
-
-### Install 
-
-Add this to your HTML
-
-```
-<script type='module'>
-  import RSInject from './RSInject.js';
-  window.addEventListener('DOMContentLoaded',function () {
-    RSInject.load();
-  });
-</script>
-..
-<a class="rs_btn"></a>
-<a onclick="RSInject.enable()">Enable ReadSpeaker</a>
-..
-```
-
-Now edit the RSInject/config.json file.
-
-
-## RSInject for Vue3 + typescript
-
-The Vue version comes with a Vue module (which adds actions to your Vuex store) and a Vue component.
-
-Add this to main.js
-```
-import RSInject from "modules/rsinject/module/RSInject.ts"
-registerModule('rsinject')
-```
-
-Then import and use the included component in your design:
-```
-import 'RSInject' from '@modules/rsinject/components/RSInject.vue'
-...
-<script setup>
-  components: RSInject
-</script>
-...
-<RSInject />
-
-
-
+Look in the folders for each to read instructions on how to install
+it, and optionally build your own demo. They both use the same source
+from `common/src/`, each with a different header.
 
 
 
