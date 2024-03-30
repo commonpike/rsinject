@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <script type="module">
+      import RSInject from './js/RSInject.js';
+      window.RSInject = RSInject;
+      window.addEventListener('DOMContentLoaded',function () {
+        RSInject.init()
+      });
+    </script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <style type="text/css">
+      
+      
+      .rsi-speaker:before {
+        content: "\1F508";
+      }
+      .rsi-speaker-active {
+        color:red;
+      }
+
+      #rsi-wrapper { 
+        display:flex; 
+        background-color:black;
+        justify-content: center;
+        align-items: center;
+        height:60px;
+        position:fixed;
+        bottom:0;
+        left:0;
+        width:100%;
+      }
+
+      #load, #enable,#disable,#play,#pause,#stop {
+        display:none;
+      }
+      
+      body:not(.rsi-loaded) #load {
+          display:inline;
+      }
+
+      body.rsi-loaded:not(.rsi-enabled) #enable {
+          display:inline;
+      }
+
+      body.rsi-enabled #play,
+      body.rsi-enabled #pause,
+      body.rsi-enabled #stop,
+      body.rsi-enabled #disable {
+          display:inline;
+      }
+      
+
+    </style>
+  </head>
+  <body>
+    <div id="rsi-wrapper">
+      <div id="rsi-player" class="rs_addtools rsbtn rs_splitbutton rs_preserve rs_skip rs_exp"></div>
+    </div>
+    <div id="rsi-tools">
+      <button id="load" onclick="RSInject && RSInject.load()">load readspeaker</button>
+      <button id="enable" onclick="RSInject && RSInject.enable()">enable readspeaker</button>
+      <button id="disable" onclick="RSInject && RSInject.disable()">disable readspeaker</button>
+      <button id="play" onclick="RSInject && RSInject.play()">play</button>
+      <button id="pause" onclick="RSInject && RSInject.pause()">pause</button>
+      <button id="stop" onclick="RSInject && RSInject.stop()">stop</button>
+    </div>
+    <hr>
+    <div id="demo1">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+    </div>
+    <hr>
+    <div id="demo2">
+      <i>click: </i>
+      <b>This text will not be read</b>
+      <p class="demo2-content">
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+      </p>
+    </div>
+  </body>
+</html>

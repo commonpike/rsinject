@@ -1,0 +1,208 @@
+/*
+    Use this css to modify readspeaker
+    and rsinject styling to your site
+*/
+
+/* skin modifications */
+
+#rsi-player {
+    height: 40px;
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+#rsi-player .rsbtn_exp_inner button {
+    height:38px;
+}
+
+
+// slik - dont know what this is
+body.with-ad #rs-controlpanel.unselectable {
+    @media (max-width: 1100px) {
+        display: block;
+        margin-right: 300px;
+    }
+    @media(max-width: 767px) {
+        margin-right: 0;
+    }
+}
+
+// the nav counter is no longer 
+// the only element in app__nav-right
+.app__nav-right .app__nav-counter--hidden {
+    display:none;
+}
+
+
+// mobile player on top, when folded,
+// fits in the nav bar
+body.rsi-enabled.rsi-mobile {
+    .app__nav-right {
+        margin-right: 25px;
+    }
+}
+
+body.rsi-loaded {
+    // on the compare page, use the actual
+    // nav header, not the overlay header
+    .results .choices-overview {
+        top: 80px!important;
+        .app__nav { // why is this here at all ?
+            display:none;
+        }
+        .choices-overview__button--mobile {
+            position:fixed;
+        }
+        @media @mobile {
+            .choices {
+                padding-top:0;
+            }
+        }
+    }
+
+
+    // on the compare page, restyle the header
+    // to match the overlay layout
+    .app__nav.app__nav--choices-overview {
+        background-color: #F1F1F1;
+        height: 80px;
+        padding-bottom: 13px;
+        @media @mobile {
+            pointer-events: all;
+        }
+        // disable the close button; resuming
+        // or enabling would start reading the results page
+        // (below the choices-overview overlay)
+        .rsbtn_closer {
+            pointer-events:none;
+        }
+        // hide the enable button; 
+        // enabling would start reading the results page
+        // (below the choices-overview overlay)
+        .rsi-enable-link {
+            display:none;
+        }
+    }
+}
+
+// on the compare page, hide the load buttons; 
+// enabling would start reading the results page
+// (below the choices-overview overlay)
+.app__nav.app__nav--choices-overview {
+    .rsi-load-link {
+        display:none;
+    }
+}
+
+// if you did not load mobile, but 
+// resize to mobile later, readspeaker
+// does not change it impl., messing up
+// the layout. damage control:
+
+body:not(.rsi-mobile) {
+    @media (max-width: 440px) {
+        #rsi-player {
+            display:none;
+        }
+    }
+    @media @mobile {
+        #rsi-player .rsbtn_exp_inner .rsbtn_speed, 
+        #rsi-player .rsbtn_exp_inner .rsbtn_volume, 
+        #rsi-player .rsbtn_exp_inner .rsbtn_rewind, 
+        #rsi-player .rsbtn_exp_inner .rsbtn_forward {
+            display: none;
+        }
+    }
+}
+
+/* 
+    per zone configuration 
+    once enabled, the layout for some zones 
+    may change to provide room for the injected speakers;
+    plus, some speakers may look different in certain zones
+*/
+
+
+body.rsi-enabled {
+   
+    
+
+    &:not(.rsi-mobile):has(#app .app .start .rsi-zone-start) {
+        .app__nav {
+            
+            opacity: 1!important;
+            justify-content: center;
+            padding-top:54px;
+            .app__nav-left, 
+            .app__nav-progress,
+            .app__nav-counter, 
+            .app__nav-client-logo {
+                display:none;
+            }
+            .app__nav-right {
+                width:100%;
+                max-width:1020px;
+                padding:0 64px;
+                #rsi-player {
+                    pointer-events:all;
+                }
+            }
+        }
+        .start .start__modal {
+            padding-top: 128px;
+        }
+    }
+    
+
+    .statement {
+        .rsi-zone-statement .rsi-speaker {
+            margin-top:-68px;
+            margin-bottom:28px;
+        }
+        .statement__tab--parties {
+            .parties-column__party-explanation {
+                position: relative;
+                padding-left:68px;
+            }
+            .rsi-zone-explanation .rsi-speaker {
+                position:absolute;
+                left:14px;
+            }
+        }
+    }
+    @media @mobile {
+        .statement {
+            .rsi-zone-statement {
+                margin-top:68px;
+            }
+        }
+    }
+    .select-statements { 
+        &.rsi-zone-themes .rsi-speaker { }
+    }
+    .select-parties { 
+        &.rsi-zone-parties .rsi-speaker { }
+    }
+    .select-analytics { 
+        @media not @mobile {
+            &.rsi-zone-analytics .rsi-speaker { 
+                margin-left: -33px;
+            }
+        }
+    }
+    .results {
+        .results__title {
+            margin-bottom:1em;
+        }
+        .rsi-zone-results .rsi-speaker { }
+    }
+    .results .choices-overview {
+        .rsi-zone-compare-header .rsi-speaker { }
+        .rsi-zone-compare-position .rsi-speaker { }
+    }
+    
+}
+
+    
+
+

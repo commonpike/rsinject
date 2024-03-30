@@ -1,0 +1,33 @@
+/*
+    This css defines the styling for tools
+    provided by the rsinject module only: 
+    
+    body.rsi-loaded { }
+    body.rsi-enabled { }
+    body.rsi-hidden { }
+    body.rsi-mobile { }
+    .rsi-zone {
+        .rsi-speaker {
+            &.rsi-speaker-active {}
+            &.rsi-speaker-paused {}
+        }
+        .rsi-read {}
+    }
+    .rsi-load-link { }
+    .rsi-enable-link { }
+    
+*/
+
+
+body.rsi-hidden #rsi-player {
+	display:none;
+}
+
+.rsi-speaker:before {
+    content: "\1F508";
+}
+.rsi-speaker-active {
+    background-color:red;
+    color:white;
+}
+

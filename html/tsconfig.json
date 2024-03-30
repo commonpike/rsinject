@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "module": "es6",
+      "esModuleInterop": true,
+      "target": "es6",
+      "moduleResolution": "node",
+      "sourceMap": false,
+      "outDir": "demo/js",
+      "resolveJsonModule": true
+    },
+    "lib": ["es2015"],
+    "include": ["src/js/RSInject.ts"]
+}

@@ -1,0 +1,677 @@
+
+
+/*
+    This css defines modifications to 
+    the readspeaker skin only.
+*/
+
+@grey-ultra-light-hover : #eee;
+@grey-ultra-light: #ddd;
+@normal: regular;
+@primary: #FF7A00;
+
+
+#rsi-player {
+    border-radius: 50px;
+    width: fit-content !important;
+    height: 33px;
+	// margin-bottom: 0;
+    z-index: 6;
+
+    &:hover {
+        box-shadow: 0 0 80px 0 #0000001A;
+    }
+    
+    .rsbtn_exp.rsimg.rspart {
+        background-color: transparent;
+        display: block !important;
+    }
+
+    // deleted stuff here
+
+    > * {
+        border-color: rgba(0,0,0,0.15);
+        background: white;
+        height: 100%;
+        box-sizing: border-box;
+    }
+    .rsbtn_play:first-child {
+        .rsbtn_left {
+            border-radius: 50px 0 0 50px;
+            margin-left: 0;
+        }  
+    }
+
+    &.rsexpanded {
+        .rsbtn_tooltoggle {
+            display: block !important;
+            margin-top: -1px;
+        }
+    }
+    //&.readspeaker--top {
+    //    display: block !important;
+    //}
+
+    .rsbtn_tooltoggle {
+        border: 1px solid;
+        border-radius: 50px 0 0 50px;
+        border-color: rgba(0,0,0,0.15);
+        // margin-top: -1px;
+        border-right-color: rgba(0,0,0,0.05);
+        width: 39px;
+        // display: none !important;
+        justify-content: center;
+        align-items: center;
+        
+        &:hover {
+            background-color: @grey-ultra-light-hover;
+        }
+        &:active, &:focus {
+            background-color: @grey-ultra-light;
+        }
+        span {
+            display: inline-block;
+            height: 13px;
+            width: 17px;
+            // display: block;
+            // justify-content: center;
+            background: url('../../../../public/rsinject/readspeaker_menu.svg');
+            // background-repeat: no-repeat;
+            &::before {
+                // height: 17px;
+                // width: 12px;
+                // align-items: center;
+                // display: block;
+                content: '';
+                // object-fit: contain;
+                
+                // content: url('../../../../public/rsinject/readspeaker_menu.svg');
+            }
+        }
+        
+    }
+
+    .rsbtn_play {
+        background: transparent;
+        
+        border: none;
+        span {
+            display: flex;
+            align-items: center;
+            
+            &::before {
+                content: '';
+            }
+            &::after {
+                content: '';
+            }
+        }
+        > span {
+            background: white;
+            &:hover {
+                background-color: @grey-ultra-light-hover !important;
+            }
+            &:active, &:focus {
+                background-color: @grey-ultra-light !important;
+            }
+        }
+        span.rsbtn_left {
+            border: 1px solid rgba(0,0,0,0.15) !important;
+            border-right-color: rgba(0,0,0,0.05) !important;
+            width: 111px !important;
+            background-repeat: no-repeat !important;
+            background-position: left !important;
+            background-position-x: 10px !important;
+            background-image: url('../../../../public/rsinject/readspeaker_speaker.svg') !important;
+            
+            span.rsbtn_text span {
+                margin-left: 10px;
+                font-family: 'Inter', sans-serif !important;
+                font-weight: @normal !important;
+                color: @primary !important;
+                font-size: 14px !important;
+                text-align: center !important;
+            }
+        }
+
+        span.rsbtn_right {
+            border-radius: 0 50px 50px 0 !important;
+            border: 1px solid rgba(0,0,0,0.15) !important;
+            border-left: none;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-position-x: 9px;
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            width: 34px !important;
+            background-image: url('../../../../public/rsinject/readspeaker_play.svg') !important;
+            
+        }
+    }
+
+
+
+}
+
+#rsi-player {
+    height: 31px;
+    margin-right: 16px;
+    // width: 364px !important;
+    &.mega_toggle {
+        // width: 403px !important;
+        .rs-player-loadindicator {
+            // width: 327px;
+            width: 212px;
+            margin-left: 38px;   
+            margin-top: 2px;       
+            // border-radius: 0;
+            // border-radius: 50px;
+            background: rgba(0,0,0,0.05);
+
+            .rsbtn-progress {
+            // border-radius: 50px;
+                background: @primary;
+            }
+        }
+    }
+    &.mega_toggle.start-page {
+        .rs-player-loadindicator {
+            width: 212px;
+            margin-left: 38px;   
+            border-radius: 0;
+            z-index: 5;
+
+            .rsbtn-progress {
+                border-radius: 0;
+                background: @primary;
+            }
+        }
+    }
+  
+
+    .rsbtn_play {
+        padding-right: 0;
+        span.rsbtn_right {
+            display: none;
+        }
+    }
+
+    .rsbtn_exp_inner {        
+        background: white;
+        border-color: rgba(0,0,0,0.15);
+        height: 100%;
+        // border-radius: 0 50px 50px 0;
+        border-radius: 50px;
+
+        .rsbtn_player_item.rsbtn_pause {
+            border-radius: 50px 0 0 50px;
+            padding-right: 0;
+            width: 31px;
+            box-sizing: content-box;
+            padding-left: 39px;
+        }
+
+        button {
+            height: 29px;
+            display: flex;
+            align-items: center;
+            border: none;
+            justify-content: center;
+
+            &:hover {
+                background-color: @grey-ultra-light-hover;
+            }
+            &:active, &:focus {
+                background-color: @grey-ultra-light;
+                span.rsicn {
+                    background: unset;
+                }
+            }
+            &:last-of-type {
+                border-radius: 0 50px 50px 0;
+            }
+            .rsicn {
+                display: flex;
+                &::before {
+                    height: 16px;
+                    width: 16px;
+                    background-size: cover;
+                    display: inline-block;
+                    content: '';
+                }
+  
+                &-pause::before {
+                    background-image: url('../../../../public/rsinject/readspeaker_play.svg');
+                }
+                &-stop::before {
+                    background-image: url('../../../../public/rsinject/readspeaker_stop.svg');
+                }
+                &-backwards::before {
+                    background-image: url('../../../../public/rsinject/readspeaker_previous.svg');
+                }
+                &-forwards::before {
+                    background-image: url('../../../../public/rsinject/readspeaker_next.svg');
+                }
+                &-volume::before {
+                    background-image: url('../../../../public/rsinject/readspeaker_speaker-loud.svg');
+                }
+                &-speed::before {
+                    background-image: url('../../../../public/rsinject/readspeaker_volume.svg');
+                }
+                &-cross::before {
+                    background-image: url('../../../../public/rsinject/readspeaker_stop-1.svg');
+                }
+            }
+        }
+        //button[aria-label="Pauze"] .rsicn-pause::before{
+        //    background-image: url('../../../../public/rsinject/readspeaker_pause.svg');
+        //}
+
+    }
+    
+    .rs-player-loadindicator {
+        z-index: 2;
+        width: 212px;
+        margin-left: 38px;
+        background: rgba(0,0,0,0.05);
+        margin-top: 2px;
+
+        .rsbtn-progress {
+            background: @primary;
+        }
+    }
+
+    &.rspaused .rsbtn_exp .rsbtn_exp_inner .rsbtn_pause .rsicn::before {
+        background-image: url('../../../../public/rsinject/readspeaker_play.svg');
+    }
+    &.rsplaying .rsbtn_exp .rsbtn_exp_inner .rsbtn_pause .rsicn::before {
+        background-image: url('../../../../public/rsinject/readspeaker_pause.svg');
+    }
+    &.rsstopped .rsbtn_exp .rsbtn_exp_inner .rsbtn_pause .rsicn::before {
+        background-image: none;
+        color: #288144;
+        content: "\e915";
+    }
+}
+
+#rsi-player.toolsopen {
+    .rsbtn_toolpanel {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: transparent;
+        
+        .rsbtn_tools {
+            border-radius: 6px;
+            background-color: white;
+            border-color: rgba(0,0,0,0.15);
+            box-shadow: 0 0 80px 0 #0000001A;
+
+            
+            .rsbtn_tool {
+                margin-right: 48px;
+            }
+            .rs_minitoggler {
+                height: 15px;
+                width: 33px;
+                right: 12px;
+                position: absolute;
+                border: 0;
+                background-color: #00000033;
+                transition: backgroundColor;
+                &::after {
+                    background: #00000080;
+                    width: 11px;
+                    height: 11px;
+                }
+                span {
+                    display: none;
+                }
+            }
+
+            .rsbtn_tool.active {
+                .rs_minitoggler {
+                    background-color: #20A84B66;
+                    &::after {
+                        background: #20A84B;
+                        left: 59%;
+                    }
+                }
+            }
+
+            li {
+                height: 37px;
+                max-height: unset;
+                border: none;
+                .rsbtn_tool:hover {
+                    background: @grey-ultra-light;
+                }
+                span.rsbtn_btnlabel {
+                    margin-left: 15px;
+                    font-family: 'Inter', sans-serif;
+                    font-weight: @normal;
+                    color: @primary;
+                    font-size: 14px;
+                }
+            }
+
+            button.rsbtn_tool {
+                display: flex;
+                align-items: center;
+                .rsicn {
+                    margin-left: 7px;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    &::before {
+                        height: 16px;
+                        width: 16px;
+                        background-size: cover;
+                        display: inline-block;
+                        content: '';
+                    }
+
+                    &-settings::before {
+                        background-image: url('../../../../public/rsinject/readspeaker_settings.svg');
+                    }
+                    &-click-listen::before {
+                        background-image: url('../../../../public/rsinject/readspeaker_click-and-listen.svg');
+                    }
+                    &-enlarged-text::before {
+                        background-image: url('../../../../public/rsinject/readspeaker_text-size.svg');
+                    }
+                    &-textmode::before {
+                        background-image: url('../../../../public/rsinject/readspeaker_text-mode.svg');
+                    }
+                    &-pagemask::before {
+                        background-image: url('../../../../public/rsinject/readspeaker_text-mask.svg');
+                    }
+                    &-download::before {
+                        background-image: url('../../../../public/rsinject/readspeaker_download.svg');
+                    }
+                    &-help::before {
+                        background-image: url('../../../../public/rsinject/readspeaker_help.svg');
+                    }
+                }
+            }
+        }
+    }
+    .rsbtn_powered {
+        display: none;
+    }
+}
+
+div#rsmpl_container {
+    z-index: 101 !important;
+    border-radius: 50px 0 0 50px;
+    border-color: rgba(0,0,0,0.15);
+    box-shadow: 0 0 80px 0 #0000001A;
+
+    &.rs_collapsed {
+        .rsmpl-tools .rsmpl-tool.rsmpl-collapse button span.rsicn {
+            &::before {
+                content: '';
+            }
+            &-slide-right {
+                background-image: url('../../../../public/rsinject/readspeaker_slide-right.svg');
+                rotate: 180deg;
+            }
+        }
+    }
+    
+    .rsmpl-tools {
+        div {
+            background: white;
+            height: 40px;
+        }
+
+        .rsmpl-tool {
+            display: flex;
+            &.rsmpl-collapse {
+                border-color: rgba(0,0,0,0.05);
+                border-radius: 50px 0 0 50px;
+                button {
+                    border-radius: 50px 0 0 50px;
+                }
+            }
+            .rsmpl-player-tool {
+                display: flex;
+            }
+        }
+
+        .rsmpl-tool div.rsmpl-playpause.rsmpl-player-tool button span.rsicn {
+            &::before {
+                content: '';
+            }
+        }
+        .rsmpl-tool.active button {
+            background-color: @grey-ultra-light;
+
+       
+        }
+        .rsmpl-tool {
+            &:hover {
+                background-color: @grey-ultra-light-hover;
+            }
+            &:active, &:focus {
+                background-color: @grey-ultra-light;
+            }
+        }
+        .rsmpl-tool button {
+            padding: 6px 8px;
+            &:active, &:focus {
+                background-color: @grey-ultra-light !important;
+            }
+
+            span.rsicn {
+                display: block; 
+                height: 16px;
+                width: 16px;
+                
+                &::before {
+                    background-size: cover;
+                    display: inline-block;
+                    content: '';
+                }
+                &-slide-right {
+                    background-image: url('../../../../public/rsinject/readspeaker_slide-right.svg');
+                }
+                &-settings {
+                    background-image: url('../../../../public/rsinject/readspeaker_settings.svg');
+                }
+                &-pagemask {
+                    background-image: url('../../../../public/rsinject/readspeaker_text-mask.svg');
+                }
+                &-dictionary {
+                    background-image: url('../../../../public/rsinject/readspeaker_dictionary.svg');
+                }
+                &-click-listen {
+                    background-image: url('../../../../public/rsinject/readspeaker_click-and-listen.svg');
+                }
+                &-download {
+                    background-image: url('../../../../public/rsinject/readspeaker_download.svg');
+                }
+                &-pause {
+                    background-image: url('../../../../public/rsinject/readspeaker_play.svg');
+                }
+                &-stop {
+                    background-image: url('../../../../public/rsinject/readspeaker_stop.svg');
+                }
+                &-cross {
+                    background-image: url('../../../../public/rsinject/readspeaker_stop-1.svg');
+                }
+            }
+            &[aria-label="Pauze"] .rsicn-pause {
+                background-image: url('../../../../public/rsinject/readspeaker_pause.svg');
+            }
+            &[title="Pauze"] .rsicn-pause {
+                background-image: url('../../../../public/rsinject/readspeaker_pause.svg');
+            }
+            &[title="Pause"] .rsicn-pause {
+                background-image: url('../../../../public/rsinject/readspeaker_pause.svg');
+            }
+        }
+    }
+    .rs-player-loadindicator {
+        z-index: 2;
+        display: block;
+        width: 258px;
+        margin-left: 32px;
+        margin-top: 0;
+        background: rgba(0,0,0,0.05);
+
+        .rsbtn-progress {
+            // border-radius: 50px;
+            background: @primary;
+        }
+    }
+}
+
+#rsmpl_container .rsmpl-tools .rsmpl-tool button:active {
+    background: @grey-ultra-light !important;
+}
+
+
+#rs-controlpanel.unselectable {
+    // display: none;
+    // @media (max-width: 800px) {
+    //     display: block;
+    // }
+    
+    background-color: white;
+    border-radius: 50px;
+    border-color: rgba(0,0,0,0.15);
+    box-shadow: 0 0 80px 0 #0000001A;
+    
+    .rs-controlpanel-scroll-toggler {
+        border-radius: 4px;
+        padding: 3px 8px;
+        border: 1px solid rgba(0,0,0,0.15);
+        .rs-controlpanel-scroll-label {
+            font-family: 'Inter', sans-serif;
+            font-weight: @normal;
+            color: @primary;
+            font-size: 14px;
+            height: 100%;
+        }
+        .rs-controlpanel-scroll-state {
+            display: flex;
+            align-items: center;
+            padding-left: 4px;
+        }
+    }
+ 
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        &:hover {
+            background-color: @grey-ultra-light-hover;
+        }
+        &:active, &:focus {
+            background-color: @grey-ultra-light;
+        }
+    }
+    .rsicn {
+        display: block;
+        height: 16px;
+        width: 16px;
+        background-repeat: no-repeat;
+        &::before, &::after {
+            content: '';
+        }
+
+        &-logo {
+            background-image: url('../../../../public/rsinject/readspeaker_speaker.svg');
+        }
+        &-pause {
+            background-image: url('../../../../public/rsinject/readspeaker_pause.svg');
+        }
+        &-play {
+            background-image: url('../../../../public/rsinject/readspeaker_play.svg');
+        }
+        &-backwards {
+            background-image: url('../../../../public/rsinject/readspeaker_previous.svg');
+        }
+        &-forwards {
+            background-image: url('../../../../public/rsinject/readspeaker_next.svg');
+        }
+        &-cross {
+            background-image: url('../../../../public/rsinject/readspeaker_stop-1.svg');
+        }
+    }
+}
+
+#rsbtn_popup.rspopup {
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 0 0 80px 0 #0000001A;
+    border: 1px solid rgba(0,0,0,0.15);;
+
+}
+
+.rspopup .rspopup_btn {
+    height: 37px;
+    max-height: unset;
+    border: none !important;
+    display: flex;
+    align-items: center;
+    
+    &:hover {
+        background: @grey-ultra-light !important;
+    }
+    .rspopup_label {
+        // margin-left: 15px;
+        margin-left: 4px;
+        font-family: 'Inter', sans-serif;
+        font-weight: @normal;
+        color: @primary;
+        font-size: 14px;
+        top: 0 !important;
+    }
+}
+
+.rspopup .rspopup_btn.rspopup_play {
+    background-repeat: no-repeat !important;
+    background-position: left !important;
+    background-position-x: 10px !important;
+    background-image: url('../../../../public/rsinject/readspeaker_speaker.svg') !important;
+    &::before {
+        content: '' !important;
+    }
+    &::after {
+        content: '' !important;
+    }
+}
+
+.rspopup .rspopup_btn.rspopup_dictionary {
+    background-repeat: no-repeat !important;
+    background-position: left !important;
+    background-position-x: 10px !important;
+    background-image: url('../../../../public/rsinject/readspeaker_dictionary.svg') !important;
+    &::before {
+        content: '' !important;
+    }
+}
+
+.rspopup .rspopup_btn.rspopup_translation {
+    // background-repeat: no-repeat !important;
+    // background-position: left !important;
+    // background-position-x: 10px !important;
+    // background-image: url('../../../../public/rsinject/readspeaker_speaker.svg') !important;
+    &::before {
+        // content: '' !important;
+        color: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+}
+
+#rsmpl_container .rsbtn_status_overlay, 
+.rsbtn .rsbtn_status_overlay {
+    border-radius: 50px 0 0 50px;
+}

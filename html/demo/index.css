@@ -1,0 +1,16 @@
+/*
+    provided setup
+*/
+
+body.rsp-enabled { }
+body.rsp-hidden { }
+#rsp-player { }
+body.rsp-hidden #rsp-player {
+	display:none;
+}
+.rsp-zone { }
+.rsp-zone .rsp-speaker { }
+.rsp-zone .rsp-speaker.rsp-speaker-active { }
+
+.rsp-zone  .rsp-read { }
+

@@ -1,0 +1,40 @@
+{
+  "name": "rsinject-vue",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "demo": "npm run build && cd demo && python3 -m http.server",
+    "copy": "cat ../common/src/RSInject.header-vue.inc ../common/src/RSInject.ts  > src/modules/rsinject/module/RSInject.ts",
+    "serve": "npm run copy && vue-cli-service serve",
+    "build": "npm run copy && vue-cli-service build",
+    "lint": "npm run copy && vue-cli-service lint"
+  },
+  "dependencies": {
+    "vue": "^3.2.13",
+    "vue-router": "^4.0.3",
+    "vuex": "^4.0.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-plugin-typescript": "~5.0.0",
+    "@vue/cli-plugin-vuex": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "@vue/eslint-config-typescript": "^9.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "less": "^4.0.0",
+    "less-loader": "^8.0.0",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.4.1",
+    "typescript": "~4.5.5"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  }
+}

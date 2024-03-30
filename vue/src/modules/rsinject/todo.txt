@@ -1,0 +1,64 @@
+start screen
+v	hidden app nav; 
+v	-> show header if rsinject loaded
+v	-> local loadlink
+statement screen
+v	statement
+v	explanation
+theme screen
+v	all screen
+v	bug: not all columns
+v	-> greedy
+v	bug: highlight buggy
+parties screen
+v	all screen
+v	bug: highlight buggy
+consent screen ?
+v	all screen
+result screen
+v	all screen
+compare screen
+v	header
+v	per statement
+	bug: highlight in position doesnt work
+v	overlay app nav..
+v	-> hide overlay header ?	
+
+vvv
+startpagina xsable button
+v remove help
+
+~~~
+design
+v svg speakericon
+v speakericons local css
+v load rsinject button
+v help button
+v help screen
+
+~~~~
+tech
+v separate test version
+v  pause/play/remember
+
+~~~~
+config
+what to read where
+
+~~~~
+discuss
+do we need help ? no
+1000 lines of css; design finetuning >
+aria off when player is on / ok
+start page covers language switch / change
+load/enable/ disable on compare page / list
+- why does choices-overview has 2nd app-nav ? / later 
+bug hilite position in compare page / list
+
+~~~~~
+notes
+load/enable/ disable on compare page / list
+bug hilite position in compare page / list
+bug remote play/pause
+
+

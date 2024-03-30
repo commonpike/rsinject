@@ -1,0 +1,18 @@
+{
+  "name": "rsinject-html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "demo": "npm run build && cd demo && python3 -m http.server",
+    "build": "rm -r demo/* && npm run copy && tsc ",
+    "copy": "rm src/js/RSInject.ts && cp -a ./src/* ./demo/ && cat ../common/src/RSInject.header-html.inc ../common/src/RSInject.ts  > src/js/RSInject.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.4.2"
+  }
+}
