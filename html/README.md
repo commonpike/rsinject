@@ -81,6 +81,10 @@ Zones are areas to read within your app. For each zone you can configure
  - `greedy` : optional, false by default. When rsinject has initialized a zone, it will not re-evaluate that zone even if there are changes on the page, to save CPU. Set to true to always evaluate the contents of a zone, even if it has been evaluated before. 
 
 
+Note:
+ - A 'zone' can refer to multiple parts of your site. Using a `zone_selector: '.page'` would transform every `.page` in your site into a readable zone, with its own speaker link
+ - Different zones can not use the same `zone_selector`
+
 #### Finetune css
 
 Look in src/rsinject.css for options on finetuning css.
