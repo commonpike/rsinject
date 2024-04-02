@@ -56,6 +56,9 @@ Zones are areas to read within your app. Within each zone,
  - `noaria_selectors` define where to remove aria-label inside the zone
  - `greedy` optional, false by default. When rsinject has initialized a zone, it will not re-evaluate that zone even if there are changes on the page, to save CPU. Set to true to always evaluate the contents of a zone, even if it has been evaluated before. 
 
+Note:
+ - A 'zone' can refer to multiple parts of your site. Using a `zone_selector: '.page'` would transform every `.page` in your site into a readable zone, with its own speaker link
+ - Different zones can not use the same `zone_selector`
 
 #### Finetune RSInject.vue  
 
