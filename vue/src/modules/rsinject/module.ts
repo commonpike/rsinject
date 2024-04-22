@@ -1,6 +1,6 @@
-import store from './store/store'
+import store from "./store/store";
 export default {
-    name: 'rsinject',
-    routes: [],
-    store: store
-}
+  name: "rsinject",
+  routes: [],
+  store: store,
+};

@@ -8,7 +8,8 @@
     "update": "cat ../common/src/RSInject.header-vue.inc ../common/src/RSInject.ts  > src/modules/rsinject/module/RSInject.ts",
     "serve": "npm run update && vue-cli-service serve",
     "build": "npm run update && vue-cli-service build",
-    "lint": "npm run update && vue-cli-service lint"
+    "lint": "vue-cli-service lint --no-fix --max-warnings 0",
+    "lint:fix": "vue-cli-service lint"
   },
   "dependencies": {
     "vue": "^3.2.13",

@@ -1,79 +1,83 @@
-import RSInject from '../module/RSInject';
-import { ActionTree } from 'vuex';
-import { Router } from 'vue-router';
+import RSInject from "../module/RSInject";
+import { ActionTree } from "vuex";
+import { Router } from "vue-router";
 
 interface RSIState {
-    loaded: boolean,
-    error: boolean,
-    enabled: boolean
+  loaded: boolean;
+  error: boolean;
+  enabled: boolean;
 }
 
 export default {
-    namespaced: true,
-    state: {
-        loaded: false,
-        error: false,
-        enabled: false
+  namespaced: true,
+  state: {
+    loaded: false,
+    error: false,
+    enabled: false,
+  },
+  getters: {
+    loaded(state: RSIState): boolean {
+      return state.loaded;
     },
-    getters: {
-        loaded(state: RSIState): boolean {
-            return state.loaded
-        },
-        error(state: RSIState): boolean {
-            return state.error
-        },
-        enabled(state: RSIState): boolean {
-            return state.enabled
-        }
+    error(state: RSIState): boolean {
+      return state.error;
     },
-    mutations: {
-        loaded(state:RSIState, status: boolean) {
-            state.loaded = status;
-        },
-        error(state:RSIState, status: boolean) {
-            state.error = status;
-        },
-        enabled(state:RSIState, status: boolean) {
-            state.enabled = status;
-        }
+    enabled(state: RSIState): boolean {
+      return state.enabled;
     },
-    actions: {
-        init({state},router: Router) {
-            RSInject.init();
-            router.beforeEach(() => {
-                if (RSInject.playing) {
-                    RSInject.stop()
-                }
-            });
-        },
-        load({commit}) {
-            commit('error',false);
-            RSInject.load().then(()=>{
-                commit('loaded',RSInject.loaded);
-                commit('enabled',RSInject.enabled);
-            }).catch(e=> {
-                commit('error',true);
-            });
-        },
-        update() {
-            RSInject.update()
-        },
-        enable({commit}) {
-            RSInject.enable();
-            commit('enabled',RSInject.enabled);
-        },
-        disable({commit}) {
-            RSInject.disable();
-            commit('enabled',RSInject.enabled);
-        },
-        play() {
-            RSInject.play();
-        },
-        pause() {
-            RSInject.pause();
-        },
-        stop() {
-            RSInject.stop();
+  },
+  mutations: {
+    loaded(state: RSIState, status: boolean) {
+      state.loaded = status;
+    },
+    error(state: RSIState, status: boolean) {
+      state.error = status;
+    },
+    enabled(state: RSIState, status: boolean) {
+      state.enabled = status;
+    },
+  },
+  actions: {
+    // eslint-disable-next-line no-empty-pattern
+    init({}, router: Router) {
+      RSInject.init();
+      router.beforeEach(() => {
+        if (RSInject.playing) {
+          RSInject.stop();
         }
-    } as ActionTree<RSIState, any>
-}
+      });
+    },
+    load({ commit }) {
+      commit("error", false);
+      RSInject.load()
+        .then(() => {
+          commit("loaded", RSInject.loaded);
+          commit("enabled", RSInject.enabled);
+        })
+        .catch(() => {
+          commit("error", true);
+        });
+    },
+    update() {
+      RSInject.update();
+    },
+    enable({ commit }) {
+      RSInject.enable();
+      commit("enabled", RSInject.enabled);
+    },
+    disable({ commit }) {
+      RSInject.disable();
+      commit("enabled", RSInject.enabled);
+    },
+    play() {
+      RSInject.play();
+    },
+    pause() {
+      RSInject.pause();
+    },
+    stop() {
+      RSInject.stop();
+    },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } as ActionTree<RSIState, any>,
+};
